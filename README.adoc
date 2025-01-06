@@ -6,17 +6,68 @@ Ce dépôt concerne les rendus de mailto:A_changer@etu.univ-tlse2.fr[Jonh Doe].
 
 == TP1
 
-.Exemple de code
-[source,java]
----
-@Given("today is Sunday")
-public void today_is_sunday() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+Fichier `ìs_it_friday_yet.feature`:
+
+[source, cocumber]
+----
+Feature: Is it Friday yet?
+    Everybody wants to know when it's Friday
+
+    Scenario Outline: The day of the week
+        Given today is "<day>"
+        When I ask whether it's Friday yet
+        Then I should be told "<answer>"
+
+        Examples:
+            | day       | answer |
+            | Sunday    | Nope   |
+            | Monday    | Nope   |
+            | Tuesday   | Nope   |
+            | Wednesday | Nope   |
+            | Thursday  | Nope   |
+            | Friday    | TGIF   |
+            | Saturday  | Nope   |
+----
+
+Fichier `IsItFriday.java`:
+[source, java]
+----
+public class IsItFriday {
+    public String today;
+    public String response;
+
+    static String isItFriday(String today) {
+        if (today.equals("Friday")) {
+            return "TGIF";
+        } else {
+            return "Nope";
+        }
+    }
+
+    @Given("today is {string}")
+    public void today_is(String day) {
+        this.today = day;
+    }
+
+    @When("I ask whether it's Friday yet")
+    public void i_ask_whether_it_s_friday_yet() {
+        this.response = isItFriday(today);
+    }
+
+    @Then("I should be told {string}")
+    public void i_should_be_told(String expectedAnswer) {
+        assertEquals(expectedAnswer, this.response);
+    }
+
+    @Given("today is Friday")
+    public void today_is_Friday() {
+        this.today = "Friday";
+    }
 }
----
 
-.Exemple d'image insérée en asciidoc
-image::artifacts-r303.svg[width=80%]
+----
 
+Les test passent :
+
+image::./hellocucumber/img/test_v1.png[]
 == TP2...
