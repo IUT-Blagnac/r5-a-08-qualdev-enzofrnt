@@ -162,3 +162,81 @@ public class CocktailSteps {
 Les test passent :
 
 image::./cucumber_demo/img/test_v2.png[]
+
+== TP3
+
+fichier `calculatrice.feature`:
+
+[source, cucumber]
+----
+Feature: Calculations with a calculator
+  As a user
+  I want to use a calculator to perform basic operations
+  So that I can see the results
+
+  Scenario Outline: Add two numbers with a calculator
+    Given I have a calculator
+    And I have numbers <num1> and <num2>
+    When I add them
+    Then the result should be <result>
+
+    Examples:
+      | num1 | num2 | result |
+      | 2    | 3    | 5      |
+      | 10   | 15   | 25     |
+      | -1   | 4    | 3      |
+      | 0    | 0    | 0      |
+----
+
+fichier `calculatrice.py`:
+
+[source, python]
+----
+class Calculatrice:
+    def __init__(self):
+        self.resultat = 0
+
+    def addition(self, num1, num2):
+        """Additionne deux nombres."""
+        self.resultat = num1 + num2
+        return self.resultat
+
+    def get_resultat(self):
+        """Retourne le dernier résultat calculé."""
+        return self.resultat
+----
+
+fichier `test.py`:
+
+[source, python]
+----
+from behave import given, when, then
+from calculatrice import Calculatrice  # Import de la classe Calculatrice
+
+@given("I have a calculator")
+def step_given_calculator(context):
+    context.calculator = Calculatrice()  # Initialisation de la calculatrice
+
+@given("I have numbers {num1:d} and {num2:d}")
+def step_given_numbers(context, num1, num2):
+    context.num1 = num1
+    context.num2 = num2
+
+@when("I add them")
+def step_when_add(context):
+    # Utilisation de la méthode addition de la calculatrice
+    context.result = context.calculator.addition(context.num1, context.num2)
+
+@then("the result should be {expected:d}")
+def step_then_result(context, expected):
+    # Vérification avec le résultat de la calculatrice
+    assert context.result == expected, f"Expected {expected}, but got {context.result}"
+----
+
+=== Objetif
+
+Ici j'ai voulu découvrir comment mettre en oeuvre les BDD sur un projet Python simple. Cela me permet de découvrir l'implémentation de ces tests dand un autre langage que Java. Aussi par la suite je pourrais utiliser ces méthodes de tets sur des projets beaucoup plus conséquents. Ici j'ai préférer faire simple. Mais je pourrai appliquer ces test sur plusieur librairies python que je maintiens pour faciliter le processus de tests. Car parfois il est complqiué de se retrouver dans tout les tests que l'on redige sur des gros projets.
+
+Exemple : https://github.com/enzofrnt/djangorestframework-hybridrouter[djangorestframework-hybridrouter]
+
+PS: Le module utiliser ici est `behave` qui est un module python qui permet de faire des tests BDD qui est semi-officiel pour cocumber, il existe aussi `pytest-bdd` mais behave semble plus populaire.
