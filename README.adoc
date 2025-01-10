@@ -240,3 +240,9 @@ Ici j'ai voulu découvrir comment mettre en oeuvre les BDD sur un projet Python 
 Exemple : https://github.com/enzofrnt/djangorestframework-hybridrouter[djangorestframework-hybridrouter]
 
 PS: Le module utiliser ici est `behave` qui est un module python qui permet de faire des tests BDD qui est semi-officiel pour cocumber, il existe aussi `pytest-bdd` mais behave semble plus populaire.
+
+== TP4
+
+++++
+include::./hellocucumber/target/cukedoctor/documentation.html[]
+++++

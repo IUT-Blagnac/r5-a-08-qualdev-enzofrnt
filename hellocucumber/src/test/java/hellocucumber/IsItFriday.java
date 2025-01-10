@@ -1,27 +1,11 @@
 package hellocucumber;
 
 import io.cucumber.java.en.*;
-
+import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.platform.suite.api.ConfigurationParameter;
 
-import org.junit.jupiter.api.Assertions.*;
-
-// public class StepDefinitions {
-
-//     @Given("an example scenario")
-//     public void anExampleScenario() {
-//     }
-
-//     @When("all step definitions are implemented")
-//     public void allStepDefinitionsAreImplemented() {
-//     }
-
-//     @Then("the scenario passes")
-//     public void theScenarioPasses() {
-//     }
-
-// }
-
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "json:target/cucumber.json")
 public class IsItFriday {
     public String today;
     public String response;
