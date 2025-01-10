@@ -244,5 +244,5 @@ PS: Le module utiliser ici est `behave` qui est un module python qui permet de f
 == TP4
 
 ++++
-include::./hellocucumber/report/cukedoctor/documentation.html[]
+include::hellocucumber/report/cukedoctor/documentation.adoc[]
 ++++
