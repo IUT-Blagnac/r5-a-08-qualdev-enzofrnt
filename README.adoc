@@ -243,6 +243,7 @@ PS: Le module utiliser ici est `behave` qui est un module python qui permet de f
 
 == TP4
 
+Retouver si dessous la documentation générée par Cukedoctor.
 
 ifdef::env-github[]
 link:hellocucumber/report/cukedoctor/documentation.adoc[Ici]
