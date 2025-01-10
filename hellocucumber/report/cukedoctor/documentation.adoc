@@ -1,0 +1,141 @@
+:toc: right
+:backend: html5
+:doctitle: Living Documentation
+:doctype: book
+:icons: font
+:!numbered:
+:sectanchors:
+:sectlink:
+:docinfo:
+:source-highlighter: highlightjs
+:toclevels: 3
+:hardbreaks:
+:chapter-label: Chapter
+:version-label: Version
+
+= *Living Documentation*
+
+== *Summary*
+[cols="12*^m", options="header,footer"]
+|===
+3+|Scenarios 7+|Steps 2+|Features: 1
+
+|[green]#*Passed*#
+|[red]#*Failed*#
+|Total
+|[green]#*Passed*#
+|[red]#*Failed*#
+|[purple]#*Skipped*#
+|[maroon]#*Pending*#
+|[yellow]#*Undefined*#
+|[blue]#*Missing*#
+|Total
+|Duration
+|Status
+
+12+^|*<<Is-it-Friday-yet?>>*
+|7
+|0
+|7
+|21
+|0
+|0
+|0
+|0
+|0
+|21
+|002ms
+|[green]#*passed*#
+12+^|*Totals*
+|7|0|7|21|0|0|0|0|0|21 2+|002ms
+|===
+
+== *Features*
+
+[[Is-it-Friday-yet?, Is it Friday yet?]]
+=== *Is it Friday yet?*
+
+ifndef::backend-pdf[]
+minmax::Is-it-Friday-yet?[]
+endif::[]
+****
+Everybody wants to know when it's Friday
+****
+
+==== Scenario Outline: The day of the week
+
+==========
+Given ::
+today is "Sunday" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+I ask whether it's Friday yet icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+I should be told "Nope" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
+==== Scenario Outline: The day of the week
+
+==========
+Given ::
+today is "Monday" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+I ask whether it's Friday yet icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+I should be told "Nope" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
+==== Scenario Outline: The day of the week
+
+==========
+Given ::
+today is "Tuesday" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+I ask whether it's Friday yet icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+I should be told "Nope" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
+==== Scenario Outline: The day of the week
+
+==========
+Given ::
+today is "Wednesday" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+I ask whether it's Friday yet icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+I should be told "Nope" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
+==== Scenario Outline: The day of the week
+
+==========
+Given ::
+today is "Thursday" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+I ask whether it's Friday yet icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+I should be told "Nope" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
+==== Scenario Outline: The day of the week
+
+==========
+Given ::
+today is "Friday" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+I ask whether it's Friday yet icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+I should be told "TGIF" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
+==== Scenario Outline: The day of the week
+
+==========
+Given ::
+today is "Saturday" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+I ask whether it's Friday yet icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+I should be told "Nope" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
