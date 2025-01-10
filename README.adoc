@@ -243,6 +243,11 @@ PS: Le module utiliser ici est `behave` qui est un module python qui permet de f
 
 == TP4
 
-++++
+
+ifdef::env-github[]
+link:hellocucumber/report/cukedoctor/documentation.adoc[Ici]
+endif::[]
+
+ifndef::env-github[]
 include::hellocucumber/report/cukedoctor/documentation.adoc[]
-++++
+endif::[]
